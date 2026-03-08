@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>中目黒小学校PTA Tシャツ注文まとめ</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Shippori+Mincho:wght@400;700&display=swap');
+  :root {
+    --main:    #7a8c7e;   /* くすみグリーン */
+    --main-dk: #5a6b5e;   /* 濃いくすみグリーン */
+    --main-lt: #c8d5ca;   /* 薄いくすみグリーン */
+    --accent:  #b07d6a;   /* くすみテラコッタ */
+    --accent-lt:#e8d5cc;  /* 薄テラコッタ */
+    --sage:    #a3b5a0;   /* セージグリーン */
+    --cream:   #f5f2ee;   /* クリーム */
+    --warm-wh: #faf8f5;   /* ウォームホワイト */
+    --gray:    #8a8680;   /* ウォームグレー */
+    --text:    #3d3a36;   /* テキスト */
+    --border:  #d8d2cb;   /* ボーダー */
+    --early:   #7a9e7e;   /* 早割グリーン */
+    --warn:    #b07d6a;   /* 警告テラコッタ */
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'Noto Sans JP',sans-serif;background:var(--cream);color:var(--text);padding:24px;max-width:880px;margin:0 auto;font-size:12px;}
+
+  /* ヘッダー */
+  .header{background:var(--main-dk);color:white;padding:22px 28px;border-radius:8px 8px 0 0;}
+  .header h1{font-family:'Shippori Mincho',serif;font-size:19px;letter-spacing:.1em;margin-bottom:6px;}
+  .header-sub{font-size:11px;color:var(--main-lt);letter-spacing:.06em;}
+
+  /* プロダクトバー */
+  .product-bar{background:var(--main);color:white;padding:9px 28px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;font-size:11px;}
+  .product-bar strong{color:#f0f4f0;font-size:13px;}
+  .tag{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);padding:2px 7px;border-radius:10px;font-size:10px;}
+
+  /* メイン */
+  .main{background:var(--warm-wh);border:1px solid var(--border);border-top:none;padding:22px 28px;border-radius:0 0 8px 8px;}
+
+  /* セクションタイトル */
+  .section-title{font-family:'Shippori Mincho',serif;font-size:13px;font-weight:700;color:var(--main-dk);letter-spacing:.08em;padding-bottom:7px;border-bottom:2px solid var(--main);margin-bottom:12px;margin-top:24px;display:flex;align-items:center;gap:10px;}
+  .section-title:first-child{margin-top:0;}
+  .section-title .line{flex:1;height:1px;background:var(--border);}
+  .section-title .note{font-size:10px;font-weight:400;color:var(--gray);font-family:'Noto Sans JP',sans-serif;}
+
+  /* テーブル */
+  table{width:100%;border-collapse:collapse;margin-bottom:14px;}
+  thead tr{background:var(--main-dk);color:white;}
+  thead th{padding:8px 10px;text-align:center;font-weight:500;font-size:11px;letter-spacing:.04em;}
+  thead th.left{text-align:left;}
+  tbody tr:nth-child(even){background:#f0ede8;}
+  tbody td{padding:7px 10px;border-bottom:1px solid var(--border);text-align:center;}
+  tbody td.left{text-align:left;font-weight:500;}
+  .price{font-weight:700;}
+  .early{color:var(--early);font-weight:700;}
+  .no-early{color:var(--gray);font-style:italic;font-size:11px;}
+  .subtotal{font-weight:700;color:var(--main-dk);}
+  tr.sum-row td{background:#dde5de!important;font-weight:700;}
+
+  /* 合計ボックス */
+  .totals-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px;}
+  .total-box{background:var(--main-dk);color:white;border-radius:8px;padding:14px 18px;}
+  .total-box h4{font-size:10px;color:var(--main-lt);letter-spacing:.1em;margin-bottom:9px;padding-bottom:5px;border-bottom:1px solid rgba(255,255,255,.15);}
+  .trow{display:flex;justify-content:space-between;font-size:11px;color:#d8e0d8;padding:2px 0;}
+  .trow.final{border-top:1px solid rgba(255,255,255,.2);padding-top:7px;margin-top:5px;font-size:15px;color:#f0f4f0;font-weight:700;font-family:'Shippori Mincho',serif;}
+  .trow.saving{color:#a8d0aa;font-size:10px;margin-top:3px;}
+
+  /* 条件グリッド */
+  .cond-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:11px;margin-bottom:16px;}
+  .cond-box{border:1px solid var(--border);border-radius:8px;padding:11px 13px;background:white;}
+  .cond-box h4{font-size:10px;font-weight:700;color:var(--gray);letter-spacing:.08em;text-transform:uppercase;margin-bottom:7px;padding-bottom:5px;border-bottom:1px solid var(--border);}
+  .crow{display:flex;justify-content:space-between;align-items:baseline;padding:2px 0;gap:6px;}
+  .crow .lbl{color:var(--gray);font-size:11px;flex-shrink:0;}
+  .crow .val{font-weight:500;font-size:11px;text-align:right;}
+  .val.red{color:var(--accent);font-weight:700;}
+  .val.green{color:var(--early);font-weight:700;}
+
+  /* インク色替えテーブル */
+  .ink-row-0 td{background:#f5f2ee!important;}
+  .ink-row-1 td{background:#ede8e3!important;}
+  .ink-row-2 td{background:#e5ddd6!important;}
+
+  /* 発注タイムライン */
+  .deadline-box{background:#f7f4f0;border:1px solid var(--accent-lt);border-left:4px solid var(--accent);border-radius:0 8px 8px 0;padding:14px 18px;margin-bottom:16px;}
+  .deadline-box h4{font-size:12px;font-weight:700;color:var(--text);margin-bottom:12px;letter-spacing:.04em;}
+  .timeline{display:flex;align-items:center;flex-wrap:wrap;gap:4px;}
+  .tl-item{display:flex;flex-direction:column;align-items:center;gap:3px;}
+  .tl-date{background:var(--main-dk);color:white;font-size:11px;font-weight:700;padding:5px 10px;border-radius:4px;white-space:nowrap;}
+  .tl-date.warn{background:var(--accent);}
+  .tl-date.ok{background:var(--early);}
+  .tl-date.gw{background:var(--gray);}
+  .tl-label{font-size:10px;color:var(--gray);text-align:center;line-height:1.4;}
+  .tl-arrow{font-size:16px;color:var(--border);align-self:center;margin-top:-10px;padding:0 2px;}
+  .tl-note{font-size:11px;color:#6a5a50;margin-top:10px;background:rgba(176,125,106,.08);padding:7px 10px;border-radius:4px;line-height:1.8;}
+
+  /* ノートボックス */
+  .note-box{background:#f0f5f0;border:1px solid var(--main-lt);border-left:3px solid var(--main);padding:10px 14px;border-radius:0 8px 8px 0;font-size:11px;line-height:1.9;color:#3a4e3c;margin-bottom:12px;}
+  .note-box strong{font-size:12px;}
+
+  /* 警告ボックス */
+  .warn-box{background:#f8f2ef;border:1px solid var(--accent-lt);border-left:3px solid var(--accent);padding:9px 14px;border-radius:0 8px 8px 0;font-size:11px;line-height:1.8;color:#6a3a2a;margin-bottom:12px;}
+
+  /* フッター */
+  .footer{text-align:center;font-size:10px;color:var(--gray);margin-top:14px;padding-top:10px;border-top:1px solid var(--border);letter-spacing:.04em;}
+
+  /* 入力フィールド */
+  input[type=number]{width:55px;border:1px solid var(--border);border-radius:4px;padding:2px 5px;text-align:right;font-size:12px;font-family:inherit;color:var(--text);background:white;}
+  input[type=number]:focus{outline:2px solid var(--main);border-color:var(--main);}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>中目黒小学校 PTA — Tシャツ注文まとめシート</h1>
+  <div class="header-sub">glimmer ドライTシャツ（300-ACT）｜ネイビー｜シルクスクリーン 左胸1色 ＋ 背中中央1色</div>
+</div>
+
+<div class="product-bar">
+  <strong>glimmer ドライTシャツ</strong>
+  <span>カラー：ネイビー</span>
+  <span>プリント：左胸（1色）＋ 背中中央（1色）</span>
+  <span class="tag">速乾</span><span class="tag">吸汗</span><span class="tag">UV90%カット</span>
+</div>
+
+<div class="main">
+
+  <!-- ===== ① 大人用 ===== -->
+  <div class="section-title">
+    ① 大人用（S・M・L）
+    <span class="line"></span>
+    <span class="note">早割あり（−5%）</span>
+  </div>
+
+  <div style="font-size:11px;color:var(--gray);margin-bottom:8px;">▼ 目安：各200枚・合計600枚の場合</div>
+  <table>
+    <thead>
+      <tr>
+        <th class="left">サイズ</th>
+        <th>アイテム単価</th>
+        <th>早割単価（−5%）</th>
+        <th>目安枚数</th>
+        <th>小計（通常）</th>
+        <th>小計（早割）</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td class="left">S</td><td class="price">550円</td><td class="early">523円</td><td>200</td><td class="subtotal">110,000円</td><td class="early">104,600円</td></tr>
+      <tr><td class="left">M</td><td class="price">550円</td><td class="early">523円</td><td>200</td><td class="subtotal">110,000円</td><td class="early">104,600円</td></tr>
+      <tr><td class="left">L</td><td class="price">550円</td><td class="early">523円</td><td>200</td><td class="subtotal">110,000円</td><td class="early">104,600円</td></tr>
+      <tr class="sum-row">
+        <td class="left">合計</td><td>—</td><td>—</td>
+        <td>600枚</td>
+        <td class="subtotal">330,000円</td>
+        <td class="early">313,800円</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div style="font-size:11px;color:var(--gray);margin-bottom:8px;margin-top:4px;">▼ 実際の枚数を入力（③の合計に反映されます）</div>
+  <table>
+    <thead>
+      <tr>
+        <th class="left">サイズ</th>
+        <th>アイテム単価</th>
+        <th>早割単価（−5%）</th>
+        <th>枚数 ✏</th>
+        <th>小計（通常）</th>
+        <th>小計（早割）</th>
+      </tr>
+    </thead>
+    <tbody id="adult-body">
+      <tr><td class="left">S</td><td class="price">550円</td><td class="early">523円</td><td><input type="number" min="0" placeholder="0" oninput="calcAll()"></td><td class="subtotal adult-sub-n">—</td><td class="early adult-sub-e">—</td></tr>
+      <tr><td class="left">M</td><td class="price">550円</td><td class="early">523円</td><td><input type="number" min="0" placeholder="0" oninput="calcAll()"></td><td class="subtotal adult-sub-n">—</td><td class="early adult-sub-e">—</td></tr>
+      <tr><td class="left">L</td><td class="price">550円</td><td class="early">523円</td><td><input type="number" min="0" placeholder="0" oninput="calcAll()"></td><td class="subtotal adult-sub-n">—</td><td class="early adult-sub-e">—</td></tr>
+      <tr class="sum-row">
+        <td class="left">合計</td><td>—</td><td>—</td>
+        <td id="adult-total-qty">—</td>
+        <td class="subtotal" id="adult-total-n">—</td>
+        <td class="early" id="adult-total-e">—</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="totals-grid">
+    <div class="total-box">
+      <h4>大人用 通常注文（税込）</h4>
+      <div class="trow"><span>アイテム代 550円 × <span id="a-qty-n">?</span>枚</span><span id="a-item-n">入力してください</span></div>
+      <div class="trow"><span>版代</span><span>15,000円</span></div>
+      <div class="trow"><span>消費税（10%）</span><span id="a-tax-n">—</span></div>
+      <div class="trow"><span>送料</span><span>750円</span></div>
+      <div class="trow final"><span>合計</span><span id="a-total-n">入力してください</span></div>
+    </div>
+    <div class="total-box">
+      <h4>大人用 早割注文（税込）</h4>
+      <div class="trow"><span>アイテム代 523円 × <span id="a-qty-e">?</span>枚</span><span id="a-item-e">入力してください</span></div>
+      <div class="trow"><span>版代（割引対象外）</span><span>15,000円</span></div>
+      <div class="trow"><span>消費税（10%）</span><span id="a-tax-e">—</span></div>
+      <div class="trow"><span>送料</span><span>750円</span></div>
+      <div class="trow final"><span>合計</span><span id="a-total-e">入力してください</span></div>
+      <div class="trow saving" id="a-saving"></div>
+    </div>
+  </div>
+
+  <!-- ===== ② 子ども用 ===== -->
+  <div class="section-title">
+    ② 子ども用（110〜150cm）
+    <span class="line"></span>
+    <span class="note">早割なし｜別注文｜枚数は要記入</span>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th class="left">サイズ</th>
+        <th>アイテム単価</th>
+        <th>早割</th>
+        <th>枚数 ✏</th>
+        <th>小計</th>
+      </tr>
+    </thead>
+    <tbody id="kids-body">
+      <tr><td class="left">110cm</td><td class="price">550円</td><td class="no-early">なし</td><td><input type="number" min="0" value="" placeholder="0" oninput="calcKids()"></td><td class="subtotal kids-sub">—</td></tr>
+      <tr><td class="left">120cm</td><td class="price">550円</td><td class="no-early">なし</td><td><input type="number" min="0" value="" placeholder="0" oninput="calcKids()"></td><td class="subtotal kids-sub">—</td></tr>
+      <tr><td class="left">130cm</td><td class="price">550円</td><td class="no-early">なし</td><td><input type="number" min="0" value="" placeholder="0" oninput="calcKids()"></td><td class="subtotal kids-sub">—</td></tr>
+      <tr><td class="left">140cm</td><td class="price">550円</td><td class="no-early">なし</td><td><input type="number" min="0" value="" placeholder="0" oninput="calcKids()"></td><td class="subtotal kids-sub">—</td></tr>
+      <tr><td class="left">150cm</td><td class="price">550円</td><td class="no-early">なし</td><td><input type="number" min="0" value="" placeholder="0" oninput="calcKids()"></td><td class="subtotal kids-sub">—</td></tr>
+      <tr class="sum-row">
+        <td class="left">合計</td><td>—</td><td>—</td>
+        <td id="kids-total-qty">—</td>
+        <td id="kids-total-sub">—</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="totals-grid">
+    <div class="total-box">
+      <h4>子ども用 合計（税込）― 新規版代あり</h4>
+      <div class="trow"><span>アイテム代 550円 × <span id="k-qty1">?</span>枚</span><span id="k-item1">—</span></div>
+      <div class="trow"><span>版代（新規）</span><span>15,000円</span></div>
+      <div class="trow"><span>消費税（10%）</span><span id="k-tax1">—</span></div>
+      <div class="trow"><span>送料</span><span>750円</span></div>
+      <div class="trow final"><span>合計</span><span id="k-total1">枚数を入力</span></div>
+    </div>
+    <div class="total-box">
+      <h4>子ども用 合計（税込）― 再注文（版代なし）</h4>
+      <div class="trow"><span>アイテム代 550円 × <span id="k-qty2">?</span>枚</span><span id="k-item2">—</span></div>
+      <div class="trow"><span>版代（1年以内・同デザイン）</span><span style="color:#a8d0aa;">0円</span></div>
+      <div class="trow"><span>消費税（10%）</span><span id="k-tax2">—</span></div>
+      <div class="trow"><span>送料</span><span>750円</span></div>
+      <div class="trow final"><span>合計</span><span id="k-total2">枚数を入力</span></div>
+      <div class="trow saving">▼ 版代節約：−16,500円（税込）</div>
+    </div>
+  </div>
+
+  <!-- ===== ③ インク色替え ===== -->
+  <div class="section-title">
+    ③ インクの色を変える場合
+    <span class="line"></span>
+    <span class="note">1版あたり1色につき 税込1,100円（版代15,000円は不要）</span>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th class="left">ケース</th>
+        <th>計算</th>
+        <th>色替え手数料</th>
+        <th>大人通常＋子ども（税込）</th>
+        <th>大人早割＋子ども（税込）</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="ink-row-0">
+        <td class="left">同色（全員同じ）</td>
+        <td>なし</td>
+        <td class="subtotal">0円</td>
+        <td class="subtotal" id="ink0-nr">—</td>
+        <td class="early"   id="ink0-er">—</td>
+      </tr>
+      <tr class="ink-row-1">
+        <td class="left">2チーム色分け</td>
+        <td>2版 × 1回</td>
+        <td class="subtotal">2,200円</td>
+        <td class="subtotal" id="ink1-nr">—</td>
+        <td class="early"   id="ink1-er">—</td>
+      </tr>
+      <tr class="ink-row-2">
+        <td class="left">6学年色分け</td>
+        <td>2版 × 5回</td>
+        <td class="subtotal">11,000円</td>
+        <td class="subtotal" id="ink2-nr">—</td>
+        <td class="early"   id="ink2-er">—</td>
+      </tr>
+    </tbody>
+  </table>
+  <div style="font-size:10px;color:var(--gray);margin-bottom:14px;">※ 子ども用の枚数を上の②に入力すると合計金額が自動で更新されます。入力前は「—」表示。</div>
+
+  <div class="note-box">
+    📌 <strong>版の有効期限：</strong>同じデザイン・サイズであれば作成した版は<strong>1年間有効</strong>で再利用可能（版代不要）。インクの色を変える場合のみ色替え手数料が発生します。
+  </div>
+
+  <!-- ===== ④ 早割発注スケジュール ===== -->
+  <div class="section-title">
+    ④ 早割を使って5/23（金）着を目指す場合の発注期限
+    <span class="line"></span>
+    <span class="note">大人用のみ対象（子ども用は早割なし）</span>
+  </div>
+
+  <div class="deadline-box">
+    <h4>🗓 逆算スケジュール</h4>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-date warn">4/30（水）〜5/2（金）</div>
+        <div class="tl-label">⚠ 早割発注締め切り</div>
+      </div>
+      <div class="tl-arrow">→</div>
+      <div class="tl-item">
+        <div class="tl-date gw">5/3〜5/6</div>
+        <div class="tl-label">GW・休業</div>
+      </div>
+      <div class="tl-arrow">→</div>
+      <div class="tl-item">
+        <div class="tl-date">5/7（水）〜</div>
+        <div class="tl-label">制作開始</div>
+      </div>
+      <div class="tl-arrow">→</div>
+      <div class="tl-item">
+        <div class="tl-date">5/18〜5/20</div>
+        <div class="tl-label">出荷（目安）</div>
+      </div>
+      <div class="tl-arrow">→</div>
+      <div class="tl-item">
+        <div class="tl-date">3〜5日後</div>
+        <div class="tl-label">配送</div>
+      </div>
+      <div class="tl-arrow">→</div>
+      <div class="tl-item">
+        <div class="tl-date ok">5/23（金）</div>
+        <div class="tl-label">✅ 手元着荷</div>
+      </div>
+    </div>
+    <div class="tl-note">
+      ⚠ 早割条件は「出荷日より<strong>2週間以上前</strong>に注文」。出荷目安を5/18〜5/20とすると2週間前は5/4〜5/6だが<strong>GW（5/3〜5/6）は休業日</strong>のため、実質の締め切りは <strong>4月30日（水）〜5月2日（金）</strong>。余裕をもって <strong>4月中の発注</strong>がベター。
+    </div>
+  </div>
+
+  <!-- ===== ⑤ 共通条件 ===== -->
+  <div class="section-title">
+    ⑤ 共通条件
+    <span class="line"></span>
+  </div>
+
+  <div class="cond-grid">
+    <div class="cond-box">
+      <h4>固定費用</h4>
+      <div class="crow"><span class="lbl">版代（新規）</span><span class="val">15,000円</span></div>
+      <div class="crow"><span class="lbl">色替え手数料</span><span class="val">1,100円／版×色</span></div>
+      <div class="crow"><span class="lbl">送料</span><span class="val">750円</span></div>
+      <div class="crow"><span class="lbl">消費税</span><span class="val">10%</span></div>
+    </div>
+    <div class="cond-box">
+      <h4>早割サービス</h4>
+      <div class="crow"><span class="lbl">割引率</span><span class="val green">5% OFF</span></div>
+      <div class="crow"><span class="lbl">条件</span><span class="val">出荷日2週間以上前</span></div>
+      <div class="crow"><span class="lbl">対象外</span><span class="val">版代・送料・子ども用</span></div>
+    </div>
+    <div class="cond-box">
+      <h4>支払い方法</h4>
+      <div class="crow"><span class="lbl">代引き手数料</span><span class="val red">+6,600円</span></div>
+      <div class="crow"><span class="lbl">振込手数料</span><span class="val red">お客様負担</span></div>
+      <div class="crow"><span class="lbl">振込最低利用</span><span class="val">5,500円以上</span></div>
+    </div>
+  </div>
+
+
+
+  <div class="footer">中目黒小学校PTA</div>
+
+</div>
+
+<script>
+function calcAll() {
+  const fmt = n => n.toLocaleString('ja-JP') + '円';
+  const HANDAI = 15000, SOURYO = 750;
+
+  // ===== ① 大人用 =====
+  const adultInputs = document.querySelectorAll('#adult-body input[type=number]');
+  const adultSubsN  = document.querySelectorAll('.adult-sub-n');
+  const adultSubsE  = document.querySelectorAll('.adult-sub-e');
+  let adultQty = 0, adultItemN = 0, adultItemE = 0;
+  adultInputs.forEach((inp, i) => {
+    const q = parseInt(inp.value) || 0;
+    adultQty   += q;
+    adultItemN += q * 550;
+    adultItemE += q * 523;
+    adultSubsN[i].textContent = q > 0 ? fmt(q * 550) : '—';
+    adultSubsE[i].textContent = q > 0 ? fmt(q * 523) : '—';
+  });
+  document.getElementById('adult-total-qty').textContent = adultQty > 0 ? adultQty + '枚' : '—';
+  document.getElementById('adult-total-n').textContent   = adultQty > 0 ? fmt(adultItemN) : '—';
+  document.getElementById('adult-total-e').textContent   = adultQty > 0 ? fmt(adultItemE) : '—';
+
+  if (adultQty > 0) {
+    const taxN = Math.round((adultItemN + HANDAI) * 0.1);
+    const totN = adultItemN + HANDAI + taxN + SOURYO;
+    const taxE = Math.round((adultItemE + HANDAI) * 0.1);
+    const totE = adultItemE + HANDAI + taxE + SOURYO;
+    document.getElementById('a-qty-n').textContent   = adultQty;
+    document.getElementById('a-item-n').textContent  = fmt(adultItemN);
+    document.getElementById('a-tax-n').textContent   = fmt(taxN);
+    document.getElementById('a-total-n').textContent = fmt(totN);
+    document.getElementById('a-qty-e').textContent   = adultQty;
+    document.getElementById('a-item-e').textContent  = fmt(adultItemE);
+    document.getElementById('a-tax-e').textContent   = fmt(taxE);
+    document.getElementById('a-total-e').textContent = fmt(totE);
+    document.getElementById('a-saving').textContent  = `▼ 通常比 ${fmt(totN - totE)}節約`;
+  } else {
+    ['a-qty-n','a-item-n','a-tax-n','a-qty-e','a-item-e','a-tax-e'].forEach(id => document.getElementById(id).textContent = '—');
+    document.getElementById('a-total-n').textContent = '入力してください';
+    document.getElementById('a-total-e').textContent = '入力してください';
+    document.getElementById('a-saving').textContent  = '';
+  }
+
+  // ===== ② 子ども用 =====
+  const kidsInputs = document.querySelectorAll('#kids-body input[type=number]');
+  const kidsSubs   = document.querySelectorAll('.kids-sub');
+  let kidsQty = 0, kidsItem = 0;
+  kidsInputs.forEach((inp, i) => {
+    const q = parseInt(inp.value) || 0;
+    kidsQty  += q;
+    kidsItem += q * 550;
+    kidsSubs[i].textContent = q > 0 ? fmt(q * 550) : '—';
+  });
+  document.getElementById('kids-total-qty').textContent = kidsQty > 0 ? kidsQty + '枚' : '—';
+  document.getElementById('kids-total-sub').textContent = kidsQty > 0 ? fmt(kidsItem) : '—';
+  ['k-qty1','k-qty2'].forEach(id => document.getElementById(id).textContent = kidsQty > 0 ? kidsQty : '?');
+
+  if (kidsQty > 0) {
+    const tax1 = Math.round((kidsItem + 15000) * 0.1);
+    document.getElementById('k-item1').textContent  = fmt(kidsItem);
+    document.getElementById('k-tax1').textContent   = fmt(tax1);
+    document.getElementById('k-total1').textContent = fmt(kidsItem + 15000 + tax1 + SOURYO);
+    const tax2 = Math.round(kidsItem * 0.1);
+    document.getElementById('k-item2').textContent  = fmt(kidsItem);
+    document.getElementById('k-tax2').textContent   = fmt(tax2);
+    document.getElementById('k-total2').textContent = fmt(kidsItem + tax2 + SOURYO);
+  } else {
+    ['k-item1','k-tax1','k-item2','k-tax2'].forEach(id => document.getElementById(id).textContent = '—');
+    document.getElementById('k-total1').textContent = '枚数を入力';
+    document.getElementById('k-total2').textContent = '枚数を入力';
+  }
+
+  // ===== ③ インク色替え合計（①②両方入力済みの場合のみ） =====
+  if (adultQty > 0 && kidsQty > 0) {
+    const inkFees = [0, 2200, 11000];
+    inkFees.forEach((fee, i) => {
+      const baseN  = adultItemN + HANDAI + kidsItem; // 子ども版代0（再注文）
+      const baseE  = adultItemE + HANDAI + kidsItem;
+      const grandN = Math.round(baseN * 1.1) + SOURYO * 2 + fee;
+      const grandE = Math.round(baseE * 1.1) + SOURYO * 2 + fee;
+      document.getElementById(`ink${i}-nr`).textContent = fmt(grandN);
+      document.getElementById(`ink${i}-er`).textContent = fmt(grandE);
+    });
+  } else {
+    ['nr','er'].forEach(sfx => [0,1,2].forEach(i =>
+      document.getElementById(`ink${i}-${sfx}`).textContent = '—'));
+  }
+}
+function calcKids() { calcAll(); }
+</script>
+</body>
+</html>
