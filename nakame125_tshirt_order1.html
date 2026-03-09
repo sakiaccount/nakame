@@ -130,32 +130,30 @@
     <span class="note">早割あり（−5%）</span>
   </div>
 
-  <div style="font-size:11px;color:var(--gray);margin-bottom:8px;">▼ 目安：各200枚・合計600枚の場合</div>
-  <table>
-    <thead>
-      <tr>
-        <th class="left">サイズ</th>
-        <th>アイテム単価</th>
-        <th>早割単価（−5%）</th>
-        <th>目安枚数</th>
-        <th>小計（通常）</th>
-        <th>小計（早割）</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td class="left">S</td><td class="price">550円</td><td class="early">523円</td><td>200</td><td class="subtotal">110,000円</td><td class="early">104,600円</td></tr>
-      <tr><td class="left">M</td><td class="price">550円</td><td class="early">523円</td><td>200</td><td class="subtotal">110,000円</td><td class="early">104,600円</td></tr>
-      <tr><td class="left">L</td><td class="price">550円</td><td class="early">523円</td><td>200</td><td class="subtotal">110,000円</td><td class="early">104,600円</td></tr>
-      <tr class="sum-row">
-        <td class="left">合計</td><td>—</td><td>—</td>
-        <td>600枚</td>
-        <td class="subtotal">330,000円</td>
-        <td class="early">313,800円</td>
-      </tr>
-    </tbody>
-  </table>
+  <div style="font-size:11px;color:var(--gray);margin-bottom:8px;">▼ 目安：各200枚・合計600枚の場合の金額</div>
+  <div class="totals-grid" style="margin-bottom:20px;">
+    <div class="total-box" style="background:#e8ede9;color:var(--text);">
+      <h4 style="color:var(--gray);">大人用 通常注文 目安（税込）</h4>
+      <div class="trow" style="color:var(--gray);"><span>アイテム代 550円 × 600枚</span><span>330,000円</span></div>
+      <div class="trow" style="color:var(--gray);"><span>プリント代 190円 × 600枚</span><span>114,000円</span></div>
+      <div class="trow" style="color:var(--gray);"><span>版代</span><span>15,000円</span></div>
+      <div class="trow" style="color:var(--gray);"><span>消費税（10%）</span><span>45,900円</span></div>
+      <div class="trow" style="color:var(--gray);"><span>送料</span><span>750円</span></div>
+      <div class="trow final" style="color:var(--main-dk);font-size:14px;"><span>合計</span><span>505,650円</span></div>
+    </div>
+    <div class="total-box" style="background:#e8ede9;color:var(--text);">
+      <h4 style="color:var(--gray);">大人用 早割注文 目安（税込）</h4>
+      <div class="trow" style="color:var(--gray);"><span>アイテム代 523円 × 600枚</span><span>313,800円</span></div>
+      <div class="trow" style="color:var(--gray);"><span>プリント代 190円 × 600枚</span><span>114,000円</span></div>
+      <div class="trow" style="color:var(--gray);"><span>版代（割引対象外）</span><span>15,000円</span></div>
+      <div class="trow" style="color:var(--gray);"><span>消費税（10%）</span><span>44,280円</span></div>
+      <div class="trow" style="color:var(--gray);"><span>送料</span><span>750円</span></div>
+      <div class="trow final" style="color:var(--main-dk);font-size:14px;"><span>合計</span><span>487,830円</span></div>
+      <div class="trow saving" style="color:var(--early);">▼ 通常比 17,820円節約</div>
+    </div>
+  </div>
 
-  <div style="font-size:11px;color:var(--gray);margin-bottom:8px;margin-top:4px;">▼ 実際の枚数を入力（③の合計に反映されます）</div>
+  <div style="font-size:11px;color:var(--gray);margin-bottom:8px;">▼ 実際の枚数を入力（③の合計に反映されます）</div>
   <table>
     <thead>
       <tr>
@@ -184,6 +182,7 @@
     <div class="total-box">
       <h4>大人用 通常注文（税込）</h4>
       <div class="trow"><span>アイテム代 550円 × <span id="a-qty-n">?</span>枚</span><span id="a-item-n">入力してください</span></div>
+      <div class="trow"><span>プリント代 190円 × <span id="a-qty-n2">?</span>枚</span><span id="a-print-n">—</span></div>
       <div class="trow"><span>版代</span><span>15,000円</span></div>
       <div class="trow"><span>消費税（10%）</span><span id="a-tax-n">—</span></div>
       <div class="trow"><span>送料</span><span>750円</span></div>
@@ -192,6 +191,7 @@
     <div class="total-box">
       <h4>大人用 早割注文（税込）</h4>
       <div class="trow"><span>アイテム代 523円 × <span id="a-qty-e">?</span>枚</span><span id="a-item-e">入力してください</span></div>
+      <div class="trow"><span>プリント代 190円 × <span id="a-qty-e2">?</span>枚</span><span id="a-print-e">—</span></div>
       <div class="trow"><span>版代（割引対象外）</span><span>15,000円</span></div>
       <div class="trow"><span>消費税（10%）</span><span id="a-tax-e">—</span></div>
       <div class="trow"><span>送料</span><span>750円</span></div>
@@ -235,6 +235,7 @@
     <div class="total-box">
       <h4>子ども用 合計（税込）― 新規版代あり</h4>
       <div class="trow"><span>アイテム代 550円 × <span id="k-qty1">?</span>枚</span><span id="k-item1">—</span></div>
+      <div class="trow"><span>プリント代 190円 × <span id="k-qty1p">?</span>枚</span><span id="k-print1">—</span></div>
       <div class="trow"><span>版代（新規）</span><span>15,000円</span></div>
       <div class="trow"><span>消費税（10%）</span><span id="k-tax1">—</span></div>
       <div class="trow"><span>送料</span><span>750円</span></div>
@@ -243,6 +244,7 @@
     <div class="total-box">
       <h4>子ども用 合計（税込）― 再注文（版代なし）</h4>
       <div class="trow"><span>アイテム代 550円 × <span id="k-qty2">?</span>枚</span><span id="k-item2">—</span></div>
+      <div class="trow"><span>プリント代 190円 × <span id="k-qty2p">?</span>枚</span><span id="k-print2">—</span></div>
       <div class="trow"><span>版代（1年以内・同デザイン）</span><span style="color:#a8d0aa;">0円</span></div>
       <div class="trow"><span>消費税（10%）</span><span id="k-tax2">—</span></div>
       <div class="trow"><span>送料</span><span>750円</span></div>
@@ -264,8 +266,6 @@
         <th class="left">ケース</th>
         <th>計算</th>
         <th>色替え手数料</th>
-        <th>大人通常＋子ども（税込）</th>
-        <th>大人早割＋子ども（税込）</th>
       </tr>
     </thead>
     <tbody>
@@ -273,34 +273,87 @@
         <td class="left">同色（全員同じ）</td>
         <td>なし</td>
         <td class="subtotal">0円</td>
-        <td class="subtotal" id="ink0-nr">—</td>
-        <td class="early"   id="ink0-er">—</td>
       </tr>
       <tr class="ink-row-1">
         <td class="left">2チーム色分け</td>
         <td>2版 × 1回</td>
         <td class="subtotal">2,200円</td>
-        <td class="subtotal" id="ink1-nr">—</td>
-        <td class="early"   id="ink1-er">—</td>
       </tr>
       <tr class="ink-row-2">
         <td class="left">6学年色分け</td>
         <td>2版 × 5回</td>
         <td class="subtotal">11,000円</td>
-        <td class="subtotal" id="ink2-nr">—</td>
-        <td class="early"   id="ink2-er">—</td>
       </tr>
     </tbody>
   </table>
-  <div style="font-size:10px;color:var(--gray);margin-bottom:14px;">※ 子ども用の枚数を上の②に入力すると合計金額が自動で更新されます。入力前は「—」表示。</div>
 
   <div class="note-box">
     📌 <strong>版の有効期限：</strong>同じデザイン・サイズであれば作成した版は<strong>1年間有効</strong>で再利用可能（版代不要）。インクの色を変える場合のみ色替え手数料が発生します。
   </div>
 
-  <!-- ===== ④ 早割発注スケジュール ===== -->
+  <!-- ===== ④ 全合計 ===== -->
   <div class="section-title">
-    ④ 早割を使って5/23（金）着を目指す場合の発注期限
+    ④ 最終お支払い合計
+    <span class="line"></span>
+    <span class="note">①②の枚数を入力すると自動計算・子ども用は再注文（版代なし）で計算</span>
+  </div>
+
+  <div style="font-size:11px;color:var(--gray);margin-bottom:10px;">※ ①②両方の枚数を入力すると自動で更新されます。</div>
+
+  <!-- 通常注文 -->
+  <div style="margin-bottom:16px;">
+    <div style="background:var(--main-dk);color:white;border-radius:8px 8px 0 0;padding:10px 18px;font-size:11px;font-weight:700;letter-spacing:.08em;">大人用 通常注文の場合</div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border);">
+      <div style="background:var(--warm-wh);padding:16px 18px;text-align:center;">
+        <div style="font-size:10px;color:var(--gray);margin-bottom:6px;">同色（全員同じ）</div>
+        <div style="font-size:10px;color:var(--gray);margin-bottom:8px;">色替え手数料 0円</div>
+        <div style="font-size:20px;font-weight:700;color:var(--main-dk);font-family:'Shippori Mincho',serif;" id="grand-n0">—</div>
+        <div style="font-size:10px;color:var(--gray);margin-top:4px;">税込</div>
+      </div>
+      <div style="background:var(--warm-wh);padding:16px 18px;text-align:center;">
+        <div style="font-size:10px;color:var(--gray);margin-bottom:6px;">2チーム色分け</div>
+        <div style="font-size:10px;color:var(--gray);margin-bottom:8px;">色替え手数料 2,200円</div>
+        <div style="font-size:20px;font-weight:700;color:var(--main-dk);font-family:'Shippori Mincho',serif;" id="grand-n1">—</div>
+        <div style="font-size:10px;color:var(--gray);margin-top:4px;">税込</div>
+      </div>
+      <div style="background:var(--warm-wh);padding:16px 18px;text-align:center;">
+        <div style="font-size:10px;color:var(--gray);margin-bottom:6px;">6学年色分け</div>
+        <div style="font-size:10px;color:var(--gray);margin-bottom:8px;">色替え手数料 11,000円</div>
+        <div style="font-size:20px;font-weight:700;color:var(--main-dk);font-family:'Shippori Mincho',serif;" id="grand-n2">—</div>
+        <div style="font-size:10px;color:var(--gray);margin-top:4px;">税込</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 早割注文 -->
+  <div style="margin-bottom:6px;">
+    <div style="background:var(--early);color:white;border-radius:8px 8px 0 0;padding:10px 18px;font-size:11px;font-weight:700;letter-spacing:.08em;">大人用 早割注文の場合　<span style="font-weight:400;font-size:10px;">（出荷日2週間以上前に注文）</span></div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border);">
+      <div style="background:#f0f7f0;padding:16px 18px;text-align:center;">
+        <div style="font-size:10px;color:var(--gray);margin-bottom:6px;">同色（全員同じ）</div>
+        <div style="font-size:10px;color:var(--gray);margin-bottom:8px;">色替え手数料 0円</div>
+        <div style="font-size:20px;font-weight:700;color:var(--early);font-family:'Shippori Mincho',serif;" id="grand-e0">—</div>
+        <div style="font-size:10px;color:var(--gray);margin-top:4px;">税込</div>
+      </div>
+      <div style="background:#f0f7f0;padding:16px 18px;text-align:center;">
+        <div style="font-size:10px;color:var(--gray);margin-bottom:6px;">2チーム色分け</div>
+        <div style="font-size:10px;color:var(--gray);margin-bottom:8px;">色替え手数料 2,200円</div>
+        <div style="font-size:20px;font-weight:700;color:var(--early);font-family:'Shippori Mincho',serif;" id="grand-e1">—</div>
+        <div style="font-size:10px;color:var(--gray);margin-top:4px;">税込</div>
+      </div>
+      <div style="background:#f0f7f0;padding:16px 18px;text-align:center;">
+        <div style="font-size:10px;color:var(--gray);margin-bottom:6px;">6学年色分け</div>
+        <div style="font-size:10px;color:var(--gray);margin-bottom:8px;">色替え手数料 11,000円</div>
+        <div style="font-size:20px;font-weight:700;color:var(--early);font-family:'Shippori Mincho',serif;" id="grand-e2">—</div>
+        <div style="font-size:10px;color:var(--gray);margin-top:4px;">税込</div>
+      </div>
+    </div>
+  </div>
+  <div style="font-size:10px;color:var(--gray);margin-bottom:20px;">※ 大人用＋子ども用（再注文・版代なし）＋色替え手数料の合計。送料はそれぞれ750円×2件分含む。</div>
+
+  <!-- ===== ⑤ 早割発注スケジュール ===== -->
+  <div class="section-title">
+    ⑤ 早割を使って5/23（金）着を目指す場合の発注期限
     <span class="line"></span>
     <span class="note">大人用のみ対象（子ども用は早割なし）</span>
   </div>
@@ -343,9 +396,9 @@
     </div>
   </div>
 
-  <!-- ===== ⑤ 共通条件 ===== -->
+  <!-- ===== ⑥ 共通条件 ===== -->
   <div class="section-title">
-    ⑤ 共通条件
+    ⑥ 共通条件
     <span class="line"></span>
   </div>
 
@@ -366,7 +419,7 @@
     <div class="cond-box">
       <h4>支払い方法</h4>
       <div class="crow"><span class="lbl">代引き手数料</span><span class="val red">+6,600円</span></div>
-      <div class="crow"><span class="lbl">振込手数料</span><span class="val red">お客様負担</span></div>
+      <div class="crow"><span class="lbl">振込手数料</span><span class="val red">注文者負担（中目黒小PTA）</span></div>
       <div class="crow"><span class="lbl">振込最低利用</span><span class="val">5,500円以上</span></div>
     </div>
   </div>
@@ -386,12 +439,13 @@ function calcAll() {
   const adultInputs = document.querySelectorAll('#adult-body input[type=number]');
   const adultSubsN  = document.querySelectorAll('.adult-sub-n');
   const adultSubsE  = document.querySelectorAll('.adult-sub-e');
-  let adultQty = 0, adultItemN = 0, adultItemE = 0;
+  let adultQty = 0, adultItemN = 0, adultItemE = 0, adultPrint = 0;
   adultInputs.forEach((inp, i) => {
     const q = parseInt(inp.value) || 0;
     adultQty   += q;
     adultItemN += q * 550;
     adultItemE += q * 523;
+    adultPrint += q * 190;
     adultSubsN[i].textContent = q > 0 ? fmt(q * 550) : '—';
     adultSubsE[i].textContent = q > 0 ? fmt(q * 523) : '—';
   });
@@ -400,21 +454,25 @@ function calcAll() {
   document.getElementById('adult-total-e').textContent   = adultQty > 0 ? fmt(adultItemE) : '—';
 
   if (adultQty > 0) {
-    const taxN = Math.round((adultItemN + HANDAI) * 0.1);
-    const totN = adultItemN + HANDAI + taxN + SOURYO;
-    const taxE = Math.round((adultItemE + HANDAI) * 0.1);
-    const totE = adultItemE + HANDAI + taxE + SOURYO;
+    const taxN = Math.round((adultItemN + adultPrint + HANDAI) * 0.1);
+    const totN = adultItemN + adultPrint + HANDAI + taxN + SOURYO;
+    const taxE = Math.round((adultItemE + adultPrint + HANDAI) * 0.1);
+    const totE = adultItemE + adultPrint + HANDAI + taxE + SOURYO;
     document.getElementById('a-qty-n').textContent   = adultQty;
+    document.getElementById('a-qty-n2').textContent  = adultQty;
     document.getElementById('a-item-n').textContent  = fmt(adultItemN);
+    document.getElementById('a-print-n').textContent = fmt(adultPrint);
     document.getElementById('a-tax-n').textContent   = fmt(taxN);
     document.getElementById('a-total-n').textContent = fmt(totN);
     document.getElementById('a-qty-e').textContent   = adultQty;
+    document.getElementById('a-qty-e2').textContent  = adultQty;
     document.getElementById('a-item-e').textContent  = fmt(adultItemE);
+    document.getElementById('a-print-e').textContent = fmt(adultPrint);
     document.getElementById('a-tax-e').textContent   = fmt(taxE);
     document.getElementById('a-total-e').textContent = fmt(totE);
     document.getElementById('a-saving').textContent  = `▼ 通常比 ${fmt(totN - totE)}節約`;
   } else {
-    ['a-qty-n','a-item-n','a-tax-n','a-qty-e','a-item-e','a-tax-e'].forEach(id => document.getElementById(id).textContent = '—');
+    ['a-qty-n','a-qty-n2','a-item-n','a-print-n','a-tax-n','a-qty-e','a-qty-e2','a-item-e','a-print-e','a-tax-e'].forEach(id => document.getElementById(id).textContent = '—');
     document.getElementById('a-total-n').textContent = '入力してください';
     document.getElementById('a-total-e').textContent = '入力してください';
     document.getElementById('a-saving').textContent  = '';
@@ -423,46 +481,52 @@ function calcAll() {
   // ===== ② 子ども用 =====
   const kidsInputs = document.querySelectorAll('#kids-body input[type=number]');
   const kidsSubs   = document.querySelectorAll('.kids-sub');
-  let kidsQty = 0, kidsItem = 0;
+  let kidsQty = 0, kidsItem = 0, kidsPrint = 0;
   kidsInputs.forEach((inp, i) => {
     const q = parseInt(inp.value) || 0;
-    kidsQty  += q;
-    kidsItem += q * 550;
+    kidsQty   += q;
+    kidsItem  += q * 550;
+    kidsPrint += q * 190;
     kidsSubs[i].textContent = q > 0 ? fmt(q * 550) : '—';
   });
   document.getElementById('kids-total-qty').textContent = kidsQty > 0 ? kidsQty + '枚' : '—';
   document.getElementById('kids-total-sub').textContent = kidsQty > 0 ? fmt(kidsItem) : '—';
-  ['k-qty1','k-qty2'].forEach(id => document.getElementById(id).textContent = kidsQty > 0 ? kidsQty : '?');
+  ['k-qty1','k-qty2','k-qty1p','k-qty2p'].forEach(id => document.getElementById(id).textContent = kidsQty > 0 ? kidsQty : '?');
 
   if (kidsQty > 0) {
-    const tax1 = Math.round((kidsItem + 15000) * 0.1);
+    const tax1 = Math.round((kidsItem + kidsPrint + 15000) * 0.1);
     document.getElementById('k-item1').textContent  = fmt(kidsItem);
+    document.getElementById('k-print1').textContent = fmt(kidsPrint);
     document.getElementById('k-tax1').textContent   = fmt(tax1);
-    document.getElementById('k-total1').textContent = fmt(kidsItem + 15000 + tax1 + SOURYO);
-    const tax2 = Math.round(kidsItem * 0.1);
+    document.getElementById('k-total1').textContent = fmt(kidsItem + kidsPrint + 15000 + tax1 + SOURYO);
+    const tax2 = Math.round((kidsItem + kidsPrint) * 0.1);
     document.getElementById('k-item2').textContent  = fmt(kidsItem);
+    document.getElementById('k-print2').textContent = fmt(kidsPrint);
     document.getElementById('k-tax2').textContent   = fmt(tax2);
-    document.getElementById('k-total2').textContent = fmt(kidsItem + tax2 + SOURYO);
+    document.getElementById('k-total2').textContent = fmt(kidsItem + kidsPrint + tax2 + SOURYO);
   } else {
-    ['k-item1','k-tax1','k-item2','k-tax2'].forEach(id => document.getElementById(id).textContent = '—');
+    ['k-item1','k-print1','k-tax1','k-item2','k-print2','k-tax2'].forEach(id => document.getElementById(id).textContent = '—');
     document.getElementById('k-total1').textContent = '枚数を入力';
     document.getElementById('k-total2').textContent = '枚数を入力';
   }
 
-  // ===== ③ インク色替え合計（①②両方入力済みの場合のみ） =====
+  // ===== ④ 最終お支払い合計 =====
   if (adultQty > 0 && kidsQty > 0) {
+    const kidsItemR  = kidsItem + kidsPrint; // 再注文（版代なし）のアイテム+プリント
     const inkFees = [0, 2200, 11000];
     inkFees.forEach((fee, i) => {
-      const baseN  = adultItemN + HANDAI + kidsItem; // 子ども版代0（再注文）
-      const baseE  = adultItemE + HANDAI + kidsItem;
+      const baseN  = adultItemN + adultPrint + HANDAI + kidsItemR;
+      const baseE  = adultItemE + adultPrint + HANDAI + kidsItemR;
       const grandN = Math.round(baseN * 1.1) + SOURYO * 2 + fee;
       const grandE = Math.round(baseE * 1.1) + SOURYO * 2 + fee;
-      document.getElementById(`ink${i}-nr`).textContent = fmt(grandN);
-      document.getElementById(`ink${i}-er`).textContent = fmt(grandE);
+      document.getElementById(`grand-n${i}`).textContent = fmt(grandN);
+      document.getElementById(`grand-e${i}`).textContent = fmt(grandE);
     });
   } else {
-    ['nr','er'].forEach(sfx => [0,1,2].forEach(i =>
-      document.getElementById(`ink${i}-${sfx}`).textContent = '—'));
+    [0,1,2].forEach(i => {
+      document.getElementById(`grand-n${i}`).textContent = '—';
+      document.getElementById(`grand-e${i}`).textContent = '—';
+    });
   }
 }
 function calcKids() { calcAll(); }
